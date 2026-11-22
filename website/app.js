@@ -147,7 +147,7 @@ const exercises = [
   },
   {
     id: "preacher-curl",
-    img: "img/preacher-curl.png",
+    img: "img/preacher-curl-machine.png",
     name: "Biceps na lavici Scott (páka)",
     group: "Ruky",
     setup: "Lavica Scott",
@@ -323,147 +323,6 @@ const exercises = [
       "Zadržiavanie dychu."
     ],
     care: ["Krk v neutrálnej polohe. Pridajte váhu, až keď sú všetkých 30 opakovaní čistých."]
-  },
-  {
-    id: "db-bench-press",
-    img: "img/db-bench-press.png",
-    name: "Tlak na rovnej lavičke s činkami",
-    group: "Hrudník",
-    setup: "Rovná lavička a voľné činky",
-    how: [
-      "Plecia dozadu a dole, chodidlá na zemi, činky nad hrudníkom.",
-      "Spúšťajte pomaly k hrudníku, lakte asi 45 stupňov od tela, potom tlačte hore.",
-      "Dýchajte pri spúšťaní, vydychujte pri tlaku."
-    ],
-    dont: [
-      "Nezdvíhajte boky z lavičky.",
-      "Nelámte zápästia.",
-      "Nepúšťajte činky padať na hrudník."
-    ],
-    care: ["Ramená. Ak sa činky nedajú bezpečne spustiť, použite stojan a zvoľte ľahšiu záťaž."]
-  },
-  {
-    id: "db-incline-press",
-    img: "img/db-incline-press.png",
-    name: "Tlak na šikmej lavičke s činkami",
-    group: "Hrudník",
-    setup: "Lavička v sklone a voľné činky",
-    how: [
-      "Lavička v mierne sklone (asi 30 stupňov), lopatky dozadu.",
-      "Tlačte činky hore a mierne dovnútra, spúšťajte pomaly.",
-      "Chodidlá pevne na zemi."
-    ],
-    dont: [
-      "Nepreklápajte sa do vysokého sklonu.",
-      "Nepreťahujte chrbát.",
-      "Nepúšťajte činky padať."
-    ],
-    care: ["Ramená. Pri pocite štípania v ramene znížte sklon lavičky."]
-  },
-  {
-    id: "db-one-arm-row",
-    img: "img/db-one-arm-row.png",
-    name: "Jednoručný veslár s činkou na lavičke",
-    group: "Chrbát",
-    setup: "Lavička a jedna voľná činka",
-    how: [
-      "Jedna ruka a koleno opreté na lavičke, chrbát rovný, činka visí.",
-      "Ťahajte lakeť hore k bedru, 1 sekundu stisnite, potom pomaly spúšťajte."
-    ],
-    dont: [
-      "Netočte trup.",
-      "Nekývajte sa.",
-      "Nezdvíhajte lakeť nad úroveň chrbta."
-    ],
-    care: ["Spodok chrbta. Chrbát je rovný v celej sérii."]
-  },
-  {
-    id: "goblet-squat",
-    img: "img/goblet-squat.png",
-    name: "Goblet drep (činka pri hrudi)",
-    group: "Nohy",
-    setup: "Jedna činka alebo kettlebell",
-    how: [
-      "Činku držte oboma rukami pri hrudníku.",
-      "Chodidlá na šírku ramien, drep dole, kolená v línii so špičkami, hrudník vzpriamený.",
-      "Vstávajte tlakom celého chodidla."
-    ],
-    dont: [
-      "Nezaokrúhľujte chrbát.",
-      "Nedávajte kolená dovnútra.",
-      "Nezdvíhajte päty."
-    ],
-    care: ["Kolená a spodok chrbta. Hĺbku volte tak, aby ste necítili bolesť."]
-  },
-  {
-    id: "db-rdl",
-    img: "img/db-rdl.png",
-    name: "Rumunský mŕtvy ťah s činkami",
-    group: "Nohy",
-    setup: "Dve voľné činky",
-    how: [
-      "Činky blízko nôh, kolená mierne pokrčené.",
-      "Bedrá odsúvajte dozadu, spúšťajte činky pozdĺž nôh, kým necítite ťah v zadnej strane stehien.",
-      "Vráťte sa stlačením bedier dopredu."
-    ],
-    dont: [
-      "Neohýnajte chrbát.",
-      "Nedržte činky ďaleko od tela.",
-      "Nerobte z toho drep."
-    ],
-    care: ["Spodok chrbta. Ak cítite bolesť, znížte váhu a rozsah."]
-  },
-  {
-    id: "db-shoulder-press",
-    img: "img/db-shoulder-press.png",
-    name: "Sediaci tlak na ramená s činkami",
-    group: "Ramená",
-    setup: "Lavička s opierkou a dve činky",
-    how: [
-      "Sadnite si na lavičku s opretým chrbtom, činky pri ramenách.",
-      "Tlačte hore bez zamknutia lakťov.",
-      "Pomaly spúšťajte."
-    ],
-    dont: [
-      "Neprehýbajte spodok chrbta.",
-      "Nepokrčte plecia.",
-      "Nespúšťajte pod úroveň uší."
-    ],
-    care: ["Ramená. Tlačte mierne dopredu, nie priamo dozadu."]
-  },
-  {
-    id: "db-triceps-extension",
-    img: "img/db-triceps-extension.png",
-    name: "Ležmo tricepsový zdvih s činkou",
-    group: "Ruky",
-    setup: "Rovná lavička a jedna činka (voliteľné)",
-    how: [
-      "Ležte na lavičke, činka nad hrudníkom, lakte mierne von a pevne.",
-      "Spúšťajte činku k čelu, lakte sa nehýbu, potom vytlačte späť."
-    ],
-    dont: [
-      "Neroztvárajte lakte do strán.",
-      "Nedvíhajte ramená z lavičky.",
-      "Nepúšťajte činku dole."
-    ],
-    care: ["Lakte. Začnite s ľahkou činkou, pri pocite tlaku v lakti skráťte rozsah."]
-  },
-  {
-    id: "plank",
-    img: "img/plank.png",
-    name: "Plank (voliteľné)",
-    group: "Brucho",
-    setup: "Vlastná váha",
-    how: [
-      "Lakte pod plecami, telo v jednej priamej línii od hlavy po päty.",
-      "Brucho a zadok napnuté, dýchajte pokojne."
-    ],
-    dont: [
-      "Nepreveseujte bedrá.",
-      "Nezdvíhajte zadok.",
-      "Nezadržiavajte dych."
-    ],
-    care: ["Spodok chrbta. Ak sa prehýba, skráťte čas."]
   }
 ];
 
@@ -471,117 +330,98 @@ const sessions = [
   {
     day: "Pondelok",
     label: "Gym A",
-    title: "Hrudník a chrbát, leg press",
+    title: "Celé telo: dôraz na hrudník a chrbát, ťažký leg press",
     time: "17:00 - 18:30",
     type: "gym",
-    img: "img/session-a-chest.png",
+    img: "img/session-a-machine.png",
     items: [
       { ex: "chest-press", sets: "3 × 14", weight: "36-42 kg" },
-      { ex: "incline-chest", sets: "3 × 14", weight: "36-41 kg" },
       { ex: "lat-pulldown", sets: "3 × 14", weight: "39 kg" },
-      { ex: "neutral-row", sets: "3 × 14", weight: "51 kg" },
       { ex: "leg-press", sets: "3 × 14", weight: "70 kg" },
+      { ex: "neutral-row", sets: "3 × 14", weight: "51 kg" },
       { ex: "lateral-raise", sets: "3 × 12", weight: "10 kg" },
+      { ex: "triceps-pushdown", sets: "3 × 12", weight: "ľahko, zistite", new: true },
       { ex: "hammer-curl", sets: "3 × 14", weight: "13-15 kg", opt: true },
       { ex: "crunch", sets: "3 × 30", weight: "45 kg", opt: true }
     ],
-    tip: "Najlepší deň na progres hrudníka. Pri tlakoch použite plný odpočinok 90 s."
+    tip: "Ťažký deň na nohy aj hrudník. Pri tlaku na hrudník použite plný odpočinok 90 s."
   },
   {
     day: "Utorok",
     label: "Gym B",
-    title: "Chrbát, zadná strana stehien",
+    title: "Celé telo: dôraz na chrbát a zadnú stranu stehien, ľahšie nohy",
     time: "17:00 - 18:30",
     type: "gym",
     img: "img/session-b-back.png",
     items: [
-      { ex: "lat-pulldown", sets: "3 × 14", weight: "39 kg" },
       { ex: "t-bar-row", sets: "3 × 12", weight: "20 kg" },
-      { ex: "v-bar-row", sets: "3 × 14", weight: "39 kg" },
-      { ex: "seated-fly", sets: "3 × 14", weight: "41-45 kg" },
+      { ex: "incline-chest", sets: "3 × 14", weight: "36-41 kg" },
       { ex: "leg-curl", sets: "3 × 14", weight: "ľahko, zistite", new: true },
       { ex: "leg-raise", sets: "3 × 14", weight: "40 kg" },
-      { ex: "preacher-curl", sets: "3 × 10", weight: "10 kg", opt: true },
+      { ex: "rear-delt", sets: "3 × 14", weight: "ľahko, zistite", new: true },
+      { ex: "preacher-curl", sets: "3 × 10", weight: "10 kg" },
+      { ex: "calf-raise", sets: "3 × 15", weight: "ľahko, zistite", new: true, opt: true },
       { ex: "crunch", sets: "3 × 30", weight: "45 kg", opt: true }
     ],
-    tip: "Myslite na „ťahanie lakťov“, nie na „ťahanie rukami“. Nohy držte ľahké: v pondelok už bol leg press."
+    tip: "Myslite na „ťahanie lakťov“, nie na „ťahanie rukami“. Nohy držte ľahké: v pondelok bol ťažký leg press."
   },
   {
     day: "Streda",
+    label: "Gym C",
+    title: "Celé telo: dôraz na nohy a ramená, ťažký leg press",
+    time: "17:00 - 18:30",
+    type: "gym",
+    img: "img/session-c-legs.png",
+    items: [
+      { ex: "leg-press", sets: "3 × 14", weight: "70 kg (+5 kg, keď je to ľahké)" },
+      { ex: "shoulder-press", sets: "3 × 12", weight: "ľahko, zistite", new: true },
+      { ex: "seated-fly", sets: "3 × 14", weight: "41-45 kg" },
+      { ex: "lat-pulldown", sets: "3 × 14", weight: "39 kg" },
+      { ex: "leg-curl", sets: "3 × 14", weight: "ako v utorok" },
+      { ex: "triceps-pushdown", sets: "3 × 12", weight: "ako v pondelok" },
+      { ex: "calf-raise", sets: "3 × 15", weight: "ľahko, zistite", opt: true },
+      { ex: "crunch", sets: "3 × 30", weight: "45 kg", opt: true }
+    ],
+    tip: "Druhý ťažký leg press týždňa. Po saune si 2 minúty sadnite, potom vstávajte pomaly."
+  },
+  {
+    day: "Štvrtok",
+    label: "Gym D",
+    title: "Celé telo: dôraz na ruky a mix, ľahšie nohy",
+    time: "17:00 - 18:30",
+    type: "gym",
+    img: "img/session-d-cables.png",
+    items: [
+      { ex: "chest-press", sets: "3 × 12", weight: "36-42 kg" },
+      { ex: "v-bar-row", sets: "3 × 14", weight: "39 kg" },
+      { ex: "leg-press", sets: "2 × 14", weight: "60-65 kg (ľahšie)" },
+      { ex: "leg-curl", sets: "3 × 14", weight: "ako v utorok" },
+      { ex: "lateral-raise", sets: "3 × 12", weight: "10 kg" },
+      { ex: "triceps-pushdown", sets: "3 × 12", weight: "ako v pondelok" },
+      { ex: "hammer-curl", sets: "3 × 14", weight: "13-15 kg" },
+      { ex: "crunch", sets: "3 × 30", weight: "45 kg", opt: true }
+    ],
+    tip: "Štvrtý tréning za sebou: pracujte na 90 % a nohy držte ľahké. Zajtra je plávanie."
+  },
+  {
+    day: "Piatok",
     label: "Plávanie",
     title: "Ľahké regeneračné plávanie",
     time: "17:30 - 18:30",
     type: "swim",
     img: "img/session-swim.png",
     items: [],
-    tip: "30 až 40 min: 8 až 10 × 50 m s 30 s prestávkou. Striedajte kraul a prsia. Mali by ste vedieť hovoriť krátkymi vetami."
+    tip: "30 až 40 min: 8 až 10 × 50 m s 30 s prestávkou. Striedajte kraul a prsia. Mali by ste vedieť hovoriť krátkymi vetami. Alkohol: maximálne 1 až 2 poháre, s jedlom a vodou."
   },
   {
-    day: "Štvrtok",
-    label: "Gym C",
-    title: "Nohy a ramená",
-    time: "17:00 - 18:30",
-    type: "gym",
-    img: "img/session-c-legs.png",
-    items: [
-      { ex: "leg-press", sets: "3 × 14", weight: "70 kg (+5 kg, keď je to ľahké)" },
-      { ex: "leg-curl", sets: "3 × 14", weight: "ako v utorok", new: true },
-      { ex: "leg-raise", sets: "3 × 14", weight: "40 kg" },
-      { ex: "shoulder-press", sets: "3 × 12", weight: "ľahko, zistite", new: true },
-      { ex: "lat-pulldown", sets: "2 × 14", weight: "36 kg" },
-      { ex: "lateral-raise", sets: "3 × 12", weight: "10 kg" },
-      { ex: "calf-raise", sets: "3 × 15", weight: "ľahko, zistite", new: true, opt: true },
-      { ex: "crunch", sets: "3 × 30", weight: "45 kg", opt: true }
-    ],
-    tip: "Leg press má najviac priestoru na rast. Po saune si 2 minúty sadnite, potom vstávajte pomaly."
-  },
-  {
-    day: "Piatok",
+    day: "Sobota",
     label: "Voľno",
     title: "Regenerácia",
     time: "-",
     type: "rest",
     img: "img/session-rest.png",
     items: [],
-    tip: "20 až 30 min prechádzka a ľahké strečingy. 8 hodín spánku. Alkohol: maximálne 1 až 2 poháre, s jedlom a vodou. Žiadna sauna."
-  },
-  {
-    day: "Sobota",
-    label: "Gym D",
-    title: "Ruky a mix, ľahšie (týždne 1, 3, 5, 6)",
-    time: "17:00 - 18:30",
-    type: "gym",
-    img: "img/session-d-arms.png",
-    items: [
-      { ex: "chest-press", sets: "3 × 14", weight: "36-42 kg" },
-      { ex: "neutral-row", sets: "3 × 14", weight: "51 kg" },
-      { ex: "leg-press", sets: "2 × 14", weight: "60-65 kg" },
-      { ex: "rear-delt", sets: "3 × 14", weight: "ľahko, zistite", new: true },
-      { ex: "triceps-pushdown", sets: "3 × 12", weight: "ľahko, zistite", new: true },
-      { ex: "hammer-curl", sets: "3 × 14", weight: "13-15 kg" },
-      { ex: "preacher-curl", sets: "3 × 10", weight: "10 kg" },
-      { ex: "crunch", sets: "3 × 30", weight: "45 kg" }
-    ],
-    tip: "Ak bol v piatok alkohol, urobte tento tréning na 90 %: o jedno opakovanie menej v každej sérii."
-  },
-  {
-    day: "Sobota",
-    label: "Gym E",
-    title: "Lavička a činky (týždne 2 a 4, namiesto Gym D)",
-    time: "17:00 - 18:30",
-    type: "gym",
-    img: "img/session-e-bench.png",
-    items: [
-      { ex: "db-bench-press", sets: "3 × 10", weight: "zistite, 2 opakovania v zálohe" },
-            { ex: "db-one-arm-row", sets: "3 × 10 na stranu", weight: "zistite, 2 opakovania v zálohe" },
-            { ex: "goblet-squat", sets: "3 × 12", weight: "zistite, 2 opakovania v zálohe" },
-            { ex: "db-incline-press", sets: "3 × 10", weight: "zistite, 2 opakovania v zálohe" },
-            { ex: "db-rdl", sets: "3 × 10", weight: "zistite, 2 opakovania v zálohe" },
-            { ex: "db-shoulder-press", sets: "3 × 10", weight: "zistite, 2 opakovania v zálohe" },
-      { ex: "db-triceps-extension", sets: "3 × 12", weight: "ľahko, zistite", opt: true },
-      { ex: "plank", sets: "3 × 30-45 s", weight: "vlastná váha", opt: true }
-    ],
-    tip: "Gym E predpokladá, že posilňovňa má voľné činky a lavičku. Ak nie, nahraďte ho druhým dňom Gym D. Váhy zvoľte tak, aby sa posledné 2 opakovania dali zvládnuť čisto."
+    tip: "20 až 30 min prechádzka a ľahké strečingy. 8 hodín spánku. Sauna je v poriadku, ak ste predchádzajúci večer nepili alkohol."
   },
   {
     day: "Nedeľa",
@@ -596,11 +436,11 @@ const sessions = [
 ];
 
 const timeline = [
-  { wk: "Týždeň 1", dates: "23.-29. 11.", focus: "Naučte sa A, B, C, D. Nové stroje začnite ľahko. 3 opakovania v zálohe. Beh." },
-  { wk: "Týždeň 2", dates: "30. 11.-6. 12.", focus: "Pridajte 1-2 opakovania alebo váhu pri kľúčových cvikoch. 2 opakovania v zálohe. Gym E namiesto Gym D." },
-  { wk: "Týždeň 3", dates: "7.-13. 12.", focus: "Ťažší týždeň. Rest-pause pri poslednej sérii tlaku na hrudník. Beh." },
-  { wk: "Týždeň 4", dates: "14.-20. 12.", focus: "Udržte alebo pridajte. Overte, či sú kalórie správne. Gym E namiesto Gym D." },
-  { wk: "Týždeň 5", dates: "21.-27. 12.", focus: "Sviatočný týždeň. Minimálne tréningy sú v poriadku. Beh." },
+  { wk: "Týždeň 1", dates: "23.-29. 11.", focus: "Naučte sa A, B, C, D. Nové stroje začnite ľahko. 3 opakovania v zálohe. V nedeľu beh." },
+  { wk: "Týždeň 2", dates: "30. 11.-6. 12.", focus: "Pridajte 1-2 opakovania alebo váhu pri kľúčových cvikoch. 2 opakovania v zálohe. V nedeľu voľno." },
+  { wk: "Týždeň 3", dates: "7.-13. 12.", focus: "Ťažší týždeň. Rest-pause pri poslednej sérii tlaku na hrudník. V nedeľu beh." },
+  { wk: "Týždeň 4", dates: "14.-20. 12.", focus: "Udržte alebo pridajte. Overte, či sú kalórie správne. V nedeľu voľno." },
+  { wk: "Týždeň 5", dates: "21.-27. 12.", focus: "Sviatočný týždeň. Minimálne tréningy sú v poriadku. V nedeľu beh." },
   { wk: "Týždeň 6", dates: "28. 12.-3. 1.", focus: "Deload: 2 série na cvik, -10 % váhy, bez zlyhania.", deload: true }
 ];
 
