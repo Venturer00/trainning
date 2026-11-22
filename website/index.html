@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Excercise - Tréningový plán</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      var saved = localStorage.getItem("theme");
+      var dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    })();
+  </script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">FORM<span>EXCERCISE</span></a>
+      <nav>
+        <a href="#week">Týždeň</a>
+        <a href="#sessions">Tréningy</a>
+        <a href="#exercises">Cviky</a>
+        <a href="#nutrition">Strava</a>
+        <a href="#supplements">Doplnky</a>
+        <a href="#progress">Progres</a>
+      </nav>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Prepnúť tmavý režim">Tmavý režim</button>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container">
+      <p class="eyebrow">Celotelový plán · 23. 11. 2026 – 3. 1. 2027</p>
+      <h1>Naberajte svalovú hmotu prirodzene.</h1>
+      <p class="lead">Štyri celotelové tréningy v posilňovni, jedno plávanie, beh každý druhý týždeň a jednoduchá strava, ktorú kúpite v ktoromkoľvek supermarkete.</p>
+      <div class="stats">
+        <div><strong>4</strong><span>tréningy za týždeň</span></div>
+        <div><strong>~170 g</strong><span>bielkovín v tréningový deň</span></div>
+        <div><strong>26</strong><span>cvikov s ukážkami</span></div>
+        <div><strong>6</strong><span>týždňov progresie</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="week">
+      <div class="container">
+        <h2>Týždenný prehľad</h2>
+        <p class="muted">Tréning začínajte o 17:00 alebo neskôr. Každý tréning v posilňovni trvá 60 až 90 minút.</p>
+        <div class="week-grid" id="week-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="sessions">
+      <div class="container">
+        <h2>Tréningy</h2>
+        <p class="muted">Vyberte deň. Začnite ťažkými základnými cvikmi a voliteľné cviky vynechajte ako prvé, ak máte málo energie.</p>
+        <div class="tabs" id="session-tabs" role="tablist"></div>
+        <div id="session-panel" class="panel" role="tabpanel"></div>
+      </div>
+    </section>
+
+    <section class="section" id="exercises">
+      <div class="container">
+        <h2>Sprievodca cvikmi</h2>
+        <p class="muted">Ako trénovať, ako NETRÉNOVAŤ a na čo dávať pozor pri každom cviku.</p>
+        <div class="toolbar">
+          <input type="search" id="exercise-search" placeholder="Hľadať cvik, napr. tlak alebo biceps" aria-label="Hľadať cviky">
+          <div class="filters" id="exercise-filters"></div>
+        </div>
+        <div class="exercise-grid" id="exercise-grid"></div>
+      </div>
+    </section>
+
+    <section class="section alt" id="nutrition">
+      <div class="container">
+        <h2>Jedálniček</h2>
+        <p class="muted">Tréningový deň: približne 2 800 kcal a 170 g bielkovín. Deň bez tréningu: približne 2 500 kcal a 166 g bielkovín. Prvé dva týždne si jedlo vážte, aby ste sa naučili porcie.</p>
+
+        <div class="two-col">
+          <div class="card">
+            <h3>Tréningový deň</h3>
+            <table>
+              <thead><tr><th>Čas</th><th>Jedlo</th><th>kcal</th><th>Bielkoviny</th></tr></thead>
+              <tbody>
+                <tr><td>07:30</td><td>3 praženice, 2 plátky chleba bez pšenice, paradajka, uhorka</td><td>550</td><td>28 g</td></tr>
+                <tr><td>12:30</td><td>500 g uvarených ryžových rezancov alebo ryže, 150 g hovädziny, kuracieho mäsa alebo tofu, zelenina</td><td>800</td><td>45 g</td></tr>
+                <tr><td>15:45</td><td>250 g gréckeho jogurtu alebo skyru, 40 g ovsených vločiek, banán, 1 čajová lyžička medu</td><td>430</td><td>30 g</td></tr>
+                <tr><td>17:00</td><td>Tréning. 0,5 l vody s citrónom, soľou a medom</td><td>50</td><td>0 g</td></tr>
+                <tr><td>19:30</td><td>150 g kuracieho mäsa, lososa alebo 3 vajec, 250 g zemiakov alebo ryže, 200 g zeleniny, 1 polievková lyžica oleja</td><td>700</td><td>42 g</td></tr>
+                <tr><td>21:30</td><td>220 g tvarohu, 1 jablko, rasca</td><td>280</td><td>25 g</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <h3>Deň bez tréningu</h3>
+            <table>
+              <thead><tr><th>Čas</th><th>Jedlo</th><th>kcal</th><th>Bielkoviny</th></tr></thead>
+              <tbody>
+                <tr><td>08:00</td><td>Rovnaké raňajky ako v tréningový deň</td><td>550</td><td>28 g</td></tr>
+                <tr><td>12:30</td><td>400 g uvarenej ryže alebo rezancov, 150 g bielkovín, zelenina</td><td>700</td><td>45 g</td></tr>
+                <tr><td>16:00</td><td>250 g gréckeho jogurtu alebo skyru, 25 g ovsených vločiek, ovocie</td><td>320</td><td>28 g</td></tr>
+                <tr><td>19:00</td><td>150 g bielkovín, 200 g zemiakov alebo ryže, zelenina</td><td>650</td><td>40 g</td></tr>
+                <tr><td>21:30</td><td>220 g tvarohu, jablko, rasca</td><td>280</td><td>25 g</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <h3 class="sub">Týždenná rotácia obedov a večerí</h3>
+        <div class="rotation" id="rotation"></div>
+
+        <h3 class="sub">Nákupný zoznam (na jeden týždeň)</h3>
+        <div class="two-col">
+          <ul class="checklist">
+            <li><strong>Bielkoviny:</strong> 20 vajec, 1,5 kg kuracieho, 500 g hovädzieho, 500 g lososa alebo 2 konzervy tuniaka, 6 × 220 g tvarohu, 1 kg gréckeho jogurtu alebo skyru</li>
+            <li><strong>Sacharidy:</strong> 2 kg ryže, 500 g ryžových rezancov, 2 kg zemiakov, 500 g ovsených vločiek, chlieb bez pšenice, banány, jablká</li>
+          </ul>
+          <ul class="checklist">
+            <li><strong>Zelenina:</strong> brokolica, uhorka, paradajky, paprika, šalátová zmes, mrkva, cibuľa, cesnak, mrazená zmes na restovanie, mrazené edamame</li>
+            <li><strong>Tuky a ochucovadlá:</strong> olivový olej, avokádo, arašidové maslo alebo orechy, rasca, sójová omáčka s nízkym obsahom soli, med, citróny, soľ</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="supplements">
+      <div class="container">
+        <h2>Doplnky výživy</h2>
+        <p class="muted">Jedlo, spánok a tréning sú na prvom mieste. Doplnky sú voliteľná podpora.</p>
+
+        <h3 class="sub">Čo už používate</h3>
+        <div class="supp-grid">
+          <article class="card">
+            <h4>Voda, citrón, soľ a med</h4>
+            <p><strong>Čo:</strong> domáci elektrolytový nápoj (0,5 l vody, polovica citróna, štipka soli, 1 čajová lyžička medu).</p>
+            <p><strong>Prečo:</strong> nahrádza sodík stratený potom a v saune a dodáva malý prísun sacharidov.</p>
+            <p><strong>Kedy:</strong> počas tréningu alebo po saune.</p>
+          </article>
+          <article class="card">
+            <h4>BioTech Pump (bez stimulantov)</h4>
+            <p><strong>Čo:</strong> predtréningový produkt, zvyčajne aminokyseliny ako citrulín a arginín. Skontrolujte etiketu.</p>
+            <p><strong>Prečo:</strong> podporuje prekrvenie a pocit „pumpy“. Sám o sebe nestavia svaly.</p>
+            <p><strong>Kedy:</strong> len občas, 20 až 30 min pred tréningom. Pri mravčení alebo problémoch so žalúdkom prestaňte.</p>
+          </article>
+        </div>
+
+        <h3 class="sub">Voliteľné doplnky</h3>
+        <div class="supp-grid">
+          <article class="card">
+            <h4>Vitamín D3</h4>
+            <p><strong>Prečo:</strong> od novembra do marca je málo slnka. Podporuje kosti, náladu a funkciu svalov.</p>
+            <p><strong>Dávka:</strong> 1 000 až 2 000 IU denne s jedlom, ktoré obsahuje tuk.</p>
+          </article>
+          <article class="card">
+            <h4>Omega-3 (EPA + DHA)</h4>
+            <p><strong>Prečo:</strong> podporuje srdce, kĺby a regeneráciu. Vhodné, ak málo jete ryby.</p>
+            <p><strong>Dávka:</strong> 1 až 2 g EPA + DHA denne s jedlom. Vynechajte, ak jete tučné ryby dvakrát do týždňa.</p>
+          </article>
+          <article class="card">
+            <h4>Horčík</h4>
+            <p><strong>Prečo:</strong> strácate ho potom, pomáha so spánkom, kŕčmi a stresom.</p>
+            <p><strong>Dávka:</strong> 200 až 400 mg večer. Glycinát je šetrnejší k žalúdku.</p>
+          </article>
+          <article class="card">
+            <h4>Proteínový prášok</h4>
+            <p><strong>Prečo:</strong> len ak z jedla nedosahujete denný cieľ bielkovín.</p>
+            <p><strong>Dávka:</strong> 25 až 30 g vo vode alebo mlieku po tréningu. Pri laktóze zvoľte izolát.</p>
+          </article>
+          <article class="card">
+            <h4>Kreatín monohydrát (voliteľné)</h4>
+            <p><strong>Prečo:</strong> najlepšie preskúmaný svalový doplnok, pre silu a svaly v dlhodobom horizonte.</p>
+            <p><strong>Dávka:</strong> 3 až 5 g denne s vodou. Na začiatku môžete pribrať 1 až 2 kg vody.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="progress">
+      <div class="container">
+        <h2>Progresia a kontroly</h2>
+        <div class="card">
+          <h3>Pravidlo dvojitej progresie</h3>
+          <ol class="steps">
+            <li>Začnite s váhou z tabuľky tréningu.</li>
+            <li>Každú sériu robte čistou technikou a s 1 až 2 opakovaniami v zálohe.</li>
+            <li>Keď všetky série dosiahnu hornú hranicu počtu opakovaní dva tréningy po sebe, pridajte 2,5 kg (horná časť tela) alebo 5 kg (leg press).</li>
+            <li>Ak po pridaní váhy klesnete pod 10 opakovaní, vráťte sa o jeden krok späť.</li>
+          </ol>
+        </div>
+
+        <h3 class="sub">Šesťtýždňový harmonogram</h3>
+        <div class="timeline" id="timeline"></div>
+
+        <h3 class="sub">Kontroly</h3>
+        <table class="checkins">
+          <thead><tr><th>Kedy</th><th>Čo sledovať</th><th>Akcia</th></tr></thead>
+          <tbody>
+            <tr><td>Každý tréning</td><td>Váhy, opakovania, pocit 1 až 10</td><td>Uplatnite pravidlo progresie</td></tr>
+            <tr><td>Každý pondelok</td><td>Telesná hmotnosť, spánok, energia, nálada, stres</td><td>Ak treba, upravte kalórie o 150 až 200 kcal</td></tr>
+            <tr><td>Každé 4 týždne</td><td>Obvod pása, hrudníka, paže a stehna, fotka</td><td>Porovnajte pokrok</td></tr>
+            <tr><td>6. týždeň</td><td>Celkové zhodnotenie</td><td>Vyberte rozdelenie tréningu na január 2027</td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="sub">Prognóza na rok 2027</h3>
+        <p class="muted">Odhad pri pravidelnom tréningu 4× týždenne a stabilnej strave. Čísla sú orientačné a upravujú sa podľa kontrol v tabuľke vyššie.</p>
+        <table class="checkins">
+          <thead><tr><th>Obdobie</th><th>Cviky a váhy</th><th>Tréning</th><th>Strava a kondícia</th><th>Nové cviky a telesná hmotnosť</th></tr></thead>
+          <tbody>
+            <tr><td>Q1 (jan – mar)</td><td>Hlavné cviky: +5 až 10 kg (napr. kladkové stiahnutie 39 → 45 až 50 kg, leg press 70 → 100 až 110 kg)</td><td>Rozdelenie horná časť / dolná časť, 4× týždenne, 3 × 8 až 12</td><td>Strava ako doteraz, cca 2 800 kcal a 170 g bielkovín v tréningový deň. Beh 8 km každý druhý týždeň</td><td>Bulharský drep a výpady. Telesná hmotnosť okolo 90 až 91 kg</td></tr>
+            <tr><td>Q2 (apr – jún)</td><td>Hlavné cviky: ďalších +5 až 10 kg, prvý cieľ: 3 série na hornej hranici počtu opakovaní</td><td>Progresívne zaťaženie, 3 až 4 série pri zložených cvikoch, 6 až 10 opakovaní</td><td>Mierne zvýšiť porcie (cca +100 kcal), ak sa váha nehýbe. Beh 10 km každý druhý týždeň</td><td>Rumunský mŕtvy ťah s činkami. Telesná hmotnosť okolo 91 až 92 kg</td></tr>
+            <tr><td>Q3 (júl – sep)</td><td>Udržať výkon, pridávať len vtedy, keď zvládnete všetky série čisto</td><td>Odľahčovací týždeň každých 6 týždňov (50 až 60 % váh). Ďalšie tréningy horná časť / dolná časť</td><td>Stabilná strava, pozor na leto a nápoje. Plávanie 1× týždenne 30 až 40 min</td><td>Kladkový tlak nad hlavu alebo tlak s činkou na rovnej lavici. Telesná hmotnosť okolo 92 až 93 kg</td></tr>
+            <tr><td>Q4 (okt – dec)</td><td>Finálne testy: maximálne opakovanie na tlak a leg press, porovnanie s januárom</td><td>Znížiť objem o 20 % na 1 až 2 týždne pred testom. Zhodnotiť celý rok</td><td>Udržať 170 g bielkovín. Pri nedostatku energie pridajte 150 až 200 kcal</td><td>Shrugs na zadnú časť ramien. Cieľová telesná hmotnosť 93 až 95 kg s nižším podielom tuku</td></tr>
+          </tbody>
+        </table>
+
+        <h3 class="sub">Ciele na koniec roka 2027</h3>
+        <ul class="steps">
+          <li><strong>Cviky:</strong> hlavné cviky o 15 až 25 % vyššia váha oproti septembru 2026, všetky série čisto v hornom rozsahu opakovaní.</li>
+          <li><strong>Tréning:</strong> 4 tréningy týždenne bez vynechaní viac ako 2 týždne v kuse. Sezónne prerušenia len podľa plánu.</li>
+          <li><strong>Strava:</strong> 170 g bielkovín v tréningový deň, väčšina jedla doma, cukor len víkendovo.</li>
+          <li><strong>Kondícia:</strong> beh 10 až 12 km v pokoji, pokojový pulz nižší ako na začiatku roka, plávanie 1× týždenne.</li>
+          <li><strong>Váha a postava:</strong> telesná hmotnosť 93 až 95 kg, pás rovnaký alebo menší, viac svalovej hmoty. Odhad je cca 3 až 5 kg čistej svalovej hmoty za celý rok.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Form Excercise · Tréningové usmernenia, nie lekárska rada. Pred zmenou tréningu, stravy alebo doplnkov sa poraďte s lekárom, ak máte zdravotný problém, užívate lieky alebo máte bolesť.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById("theme-toggle");
+      function label() {
+        var dark = root.getAttribute("data-theme") === "dark";
+        btn.textContent = dark ? "Svetlý režim" : "Tmavý režim";
+        btn.setAttribute("aria-label", dark ? "Prepnúť svetlý režim" : "Prepnúť tmavý režim");
+      }
+      btn.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        label();
+      });
+      label();
+    })();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
