@@ -469,7 +469,7 @@ const exercises = [
 
 const sessions = [
   {
-    day: "Po",
+    day: "Pondelok",
     label: "Gym A",
     title: "Hrudník a chrbát, leg press",
     time: "17:00 - 18:30",
@@ -488,7 +488,7 @@ const sessions = [
     tip: "Najlepší deň na progres hrudníka. Pri tlakoch použite plný odpočinok 90 s."
   },
   {
-    day: "Ut",
+    day: "Utorok",
     label: "Gym B",
     title: "Chrbát, zadná strana stehien",
     time: "17:00 - 18:30",
@@ -507,7 +507,7 @@ const sessions = [
     tip: "Myslite na „ťahanie lakťov“, nie na „ťahanie rukami“. Nohy držte ľahké: v pondelok už bol leg press."
   },
   {
-    day: "St",
+    day: "Streda",
     label: "Plávanie",
     title: "Ľahké regeneračné plávanie",
     time: "17:30 - 18:30",
@@ -517,7 +517,7 @@ const sessions = [
     tip: "30 až 40 min: 8 až 10 × 50 m s 30 s prestávkou. Striedajte kraul a prsia. Mali by ste vedieť hovoriť krátkymi vetami."
   },
   {
-    day: "Št",
+    day: "Štvrtok",
     label: "Gym C",
     title: "Nohy a ramená",
     time: "17:00 - 18:30",
@@ -536,7 +536,7 @@ const sessions = [
     tip: "Leg press má najviac priestoru na rast. Po saune si 2 minúty sadnite, potom vstávajte pomaly."
   },
   {
-    day: "Pi",
+    day: "Piatok",
     label: "Voľno",
     title: "Regenerácia",
     time: "-",
@@ -546,7 +546,7 @@ const sessions = [
     tip: "20 až 30 min prechádzka a ľahké strečingy. 8 hodín spánku. Alkohol: maximálne 1 až 2 poháre, s jedlom a vodou. Žiadna sauna."
   },
   {
-    day: "So",
+    day: "Sobota",
     label: "Gym D",
     title: "Ruky a mix, ľahšie (týždne 1, 3, 5, 6)",
     time: "17:00 - 18:30",
@@ -565,7 +565,7 @@ const sessions = [
     tip: "Ak bol v piatok alkohol, urobte tento tréning na 90 %: o jedno opakovanie menej v každej sérii."
   },
   {
-    day: "So",
+    day: "Sobota",
     label: "Gym E",
     title: "Lavička a činky (týždne 2 a 4, namiesto Gym D)",
     time: "17:00 - 18:30",
@@ -584,7 +584,7 @@ const sessions = [
     tip: "Gym E predpokladá, že posilňovňa má voľné činky a lavičku. Ak nie, nahraďte ho druhým dňom Gym D. Váhy zvoľte tak, aby sa posledné 2 opakovania dali zvládnuť čisto."
   },
   {
-    day: "Ne",
+    day: "Nedeľa",
     label: "Beh",
     title: "8 km beh (každý 2. týždeň) alebo úplný odpočinok",
     time: "17:00",
@@ -629,14 +629,26 @@ function el(tag, attrs = {}, children = []) {
 
 function renderWeek() {
   const grid = document.getElementById("week-grid");
+  const sessionsByDay = new Map();
   for (const s of sessions) {
-    const meta = s.type === "gym" ? `${s.items.length} cvikov · ${s.time}` : s.time;
+    if (!sessionsByDay.has(s.day)) sessionsByDay.set(s.day, []);
+    sessionsByDay.get(s.day).push(s);
+  }
+
+  for (const daySessions of sessionsByDay.values()) {
+    const s = daySessions[0];
+    const alternatives = daySessions.length > 1;
+    const labels = daySessions.map((session) => session.label).join(" / ");
+    const title = daySessions.map((session) => session.title).join(" / ");
+    const meta = alternatives
+      ? `Striedajú sa podľa týždňa · ${s.time}`
+      : s.type === "gym" ? `${s.items.length} cvikov · ${s.time}` : s.time;
     grid.append(
       el("div", { class: `day ${s.type}` }, [
-        el("img", { class: "thumb", src: s.img, alt: `${s.label}: ${s.title}`, loading: "lazy" }),
+        el("img", { class: "thumb", src: s.img, alt: `${labels}: ${title}`, loading: "lazy" }),
         el("div", { class: "dname", text: s.day }),
-        el("div", { class: "dtitle", text: s.label }),
-        el("div", { class: "dmeta", text: s.title }),
+        el("div", { class: "dtitle", text: labels }),
+        el("div", { class: "dmeta", text: title }),
         el("div", { class: "dmeta", text: meta })
       ])
     );
